@@ -61,7 +61,6 @@ public class MyAdapterCompra extends RecyclerView.Adapter<MyAdapterCompra.MyView
                 ListaCompraFragment.adapter_lista_compra.notifyDataSetChanged();
             }
         });
-
     }
 
 
