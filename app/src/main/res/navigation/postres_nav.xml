@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postres_nav"
+    app:startDestination="@id/otroPostreFragment">
+
+    <fragment
+        android:id="@+id/otroPostreFragment"
+        android:name="com.example.yasai.OtroPostreFragment"
+        android:label="fragment_otro_postre"
+        tools:layout="@layout/fragment_otro_postre" />
+    <fragment
+        android:id="@+id/smoothieFragment"
+        android:name="com.example.yasai.SmoothieFragment"
+        android:label="fragment_smoothie"
+        tools:layout="@layout/fragment_smoothie" />
+    <fragment
+        android:id="@+id/heladoFragment"
+        android:name="com.example.yasai.HeladoFragment"
+        android:label="fragment_helado"
+        tools:layout="@layout/fragment_helado" />
+    <fragment
+        android:id="@+id/listaCompraFragment3"
+        android:name="com.example.yasai.ListaCompraFragment"
+        android:label="fragment_lista_compra"
+        tools:layout="@layout/fragment_lista_compra" />
+</navigation>

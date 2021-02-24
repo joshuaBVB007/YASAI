@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Plato"
+        android:icon="@drawable/ic_plato"
+        android:id="@+id/platoFragment"/>
+    <item android:title="Sopa"
+          android:icon="@drawable/ic_sopa"
+          android:id="@+id/sopaFragment"/>
+    <item android:title="Ensalada"
+          android:icon="@drawable/ic_ensalada__3_"
+          android:id="@+id/ensaladaFragment"/>
+    <item android:title="Compra"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:id="@+id/listaCompraFragment2"/>
+</menu>

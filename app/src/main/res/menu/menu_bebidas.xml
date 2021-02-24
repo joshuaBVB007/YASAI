@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Citricos"
+          android:icon="@drawable/ic_lima"
+          android:id="@+id/citricosFragment"/>
+
+    <item android:title="Exoticas"
+        android:icon="@drawable/ic_frutas"
+        android:id="@+id/exoticasFragment" />
+
+    <item
+        android:title="Comunes"
+        android:icon="@drawable/ic_manzana"
+        android:id="@+id/otra_FrutaFragment"/>
+
+    <item
+        android:title="Compra"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:id="@+id/listaCompraFragment"/>
+
+</menu>

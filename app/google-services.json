@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "849112915714",
+    "project_id": "yasai-643d4",
+    "storage_bucket": "yasai-643d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849112915714:android:eab02f1b3482d1c9d32c1b",
+        "android_client_info": {
+          "package_name": "com.example.yasai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849112915714-hc1go10bkunb6pvkj8butko0v3f5tu44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI5KqT-nmwh2IOoXX_JlBn_5uShfqIS2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849112915714-hc1go10bkunb6pvkj8butko0v3f5tu44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

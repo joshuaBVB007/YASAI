@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comidas_nav"
+    app:startDestination="@id/platoFragment">
+
+    <fragment
+        android:id="@+id/platoFragment"
+        android:name="com.example.yasai.PlatoFragment"
+        android:label="fragment_plato"
+        tools:layout="@layout/fragment_plato" />
+    <fragment
+        android:id="@+id/ensaladaFragment"
+        android:name="com.example.yasai.EnsaladaFragment"
+        android:label="fragment_ensalada"
+        tools:layout="@layout/fragment_ensalada" />
+    <fragment
+        android:id="@+id/sopaFragment"
+        android:name="com.example.yasai.SopaFragment"
+        android:label="fragment_sopa"
+        tools:layout="@layout/fragment_sopa" />
+    <fragment
+        android:id="@+id/listaCompraFragment2"
+        android:name="com.example.yasai.ListaCompraFragment"
+        android:label="fragment_lista_compra"
+        tools:layout="@layout/fragment_lista_compra" />
+</navigation>

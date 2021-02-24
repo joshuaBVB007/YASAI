@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Smoothie"
+        android:icon="@drawable/ic_smoothie"
+        android:id="@+id/smoothieFragment"/>
+
+    <item android:title="Helado"
+          android:icon="@drawable/ic_helado"
+          android:id="@+id/heladoFragment"/>
+
+    <item android:title="Variados"
+          android:icon="@drawable/ic_galleta"
+          android:id="@+id/otroPostreFragment"/>
+
+    <item android:title="Compra"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:id="@+id/listaCompraFragment3"/>
+
+</menu>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bebidas_nav"
+    app:startDestination="@id/exoticasFragment">
+
+    <fragment
+        android:id="@+id/exoticasFragment"
+        android:name="com.example.yasai.ExoticasFragment"
+        android:label="fragment_exoticas"
+        tools:layout="@layout/fragment_exoticas" >
+        <action
+            android:id="@+id/action_exoticasFragment_to_citricosFragment"
+            app:destination="@id/citricosFragment" />
+        <action
+            android:id="@+id/action_exoticasFragment_to_citricosFragment2"
+            app:destination="@id/citricosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citricosFragment"
+        android:name="com.example.yasai.CitricosFragment"
+        android:label="fragment_citricos"
+        tools:layout="@layout/fragment_citricos" >
+        <action
+            android:id="@+id/action_citricosFragment_to_otra_FrutaFragment"
+            app:destination="@id/otra_FrutaFragment" />
+        <action
+            android:id="@+id/action_citricosFragment_to_otra_FrutaFragment2"
+            app:destination="@id/otra_FrutaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otra_FrutaFragment"
+        android:name="com.example.yasai.Otra_FrutaFragment"
+        android:label="fragment_otra__fruta"
+        tools:layout="@layout/fragment_otra__fruta" >
+        <action
+            android:id="@+id/action_otra_FrutaFragment_to_exoticasFragment"
+            app:destination="@id/exoticasFragment" />
+        <action
+            android:id="@+id/action_otra_FrutaFragment_to_exoticasFragment2"
+            app:destination="@id/exoticasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaCompraFragment"
+        android:name="com.example.yasai.ListaCompraFragment"
+        android:label="fragment_lista_compra"
+        tools:layout="@layout/fragment_lista_compra" />
+</navigation>
