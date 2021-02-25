@@ -2,13 +2,11 @@ package com.example.yasai;
 
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -79,7 +77,7 @@ public class MyAdapterCitricos extends RecyclerView.Adapter<MyAdapterCitricos.My
             }
             @Override
             public void onError() {
-                Toast.makeText(con,"Ha fallado",Toast.LENGTH_SHORT).show();
+                Toast.makeText(con,"Imagen no se descargó",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -105,7 +103,7 @@ public class MyAdapterCitricos extends RecyclerView.Adapter<MyAdapterCitricos.My
             image_brand=itemView.findViewById(R.id.imagen_);
             precio=itemView.findViewById(R.id.precio);
             agregar=itemView.findViewById(R.id.button3);
-            cantidad=itemView.findViewById(R.id.cantidad);
+            cantidad=itemView.findViewById(R.id.cantidad_);
         }
     }
 

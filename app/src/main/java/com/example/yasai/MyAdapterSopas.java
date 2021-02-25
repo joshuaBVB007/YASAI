@@ -97,7 +97,7 @@ public class MyAdapterSopas extends RecyclerView.Adapter<MyAdapterSopas.MyViewHo
             image_brand=itemView.findViewById(R.id.imagen_);
             precio=itemView.findViewById(R.id.precio);
             agregar=itemView.findViewById(R.id.button3);
-            cantidad=itemView.findViewById(R.id.cantidad);
+            cantidad=itemView.findViewById(R.id.cantidad_);
         }
     }
 

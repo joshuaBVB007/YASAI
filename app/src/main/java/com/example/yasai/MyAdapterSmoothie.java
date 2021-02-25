@@ -96,7 +96,7 @@ public class MyAdapterSmoothie extends RecyclerView.Adapter<MyAdapterSmoothie.My
             image_brand=itemView.findViewById(R.id.imagen_);
             precio=itemView.findViewById(R.id.precio);
             agregar=itemView.findViewById(R.id.button3);
-            cantidad=itemView.findViewById(R.id.cantidad);
+            cantidad=itemView.findViewById(R.id.cantidad_);
         }
     }
 

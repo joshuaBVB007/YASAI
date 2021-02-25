@@ -1,7 +1,6 @@
 package com.example.yasai;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,7 +99,7 @@ public class MyAdapterExoticos extends RecyclerView.Adapter<MyAdapterExoticos.My
             image_brand=itemView.findViewById(R.id.imagen_);
             precio=itemView.findViewById(R.id.precio);
             agregar=itemView.findViewById(R.id.button3);
-            cantidad=itemView.findViewById(R.id.cantidad);
+            cantidad=itemView.findViewById(R.id.cantidad_);
         }
     }
 

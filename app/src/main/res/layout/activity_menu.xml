@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/maps"
+    android:background="@drawable/rosita"
     android:onClick="log_out"
     tools:context=".Menu">
 
@@ -12,15 +12,16 @@
         android:id="@+id/button_bebidas"
         android:layout_width="138dp"
         android:layout_height="49dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/boton_personalizado"
         android:fontFamily="sans-serif-medium"
         android:onClick="ir_a_bebidas"
         android:text="Bebida"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/button_comida"
@@ -31,6 +32,7 @@
         android:onClick="ir_a_comidas"
         android:text="Comida"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_bebidas" />
 
@@ -38,56 +40,66 @@
         android:id="@+id/button_postre"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/boton_personalizado"
         android:onClick="ir_a_postres"
         android:text="Postre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_comida" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="207dp"
-        android:layout_height="164dp"
-        android:layout_marginBottom="168dp"
+        android:layout_width="188dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="36dp"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_postre"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/yasaii" />
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/boton_personalizado"
+        android:onClick="log_out"
+        android:text="Cerrar sesión"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/instagram"
-        android:layout_width="62dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="64dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="28dp"
+        android:paddingLeft="3dp"
+        android:paddingTop="3dp"
+        android:paddingRight="3dp"
+        android:paddingBottom="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_instagram" />
 
     <ImageView
         android:id="@+id/location"
-        android:layout_width="63dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="64dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="28dp"
+        android:paddingLeft="3dp"
+        android:paddingTop="3dp"
+        android:paddingRight="3dp"
+        android:paddingBottom="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/instagram"
         app:srcCompat="@drawable/ic_maps_and_flags" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="44dp"
-        android:background="@drawable/boton_personalizado"
-        android:onClick="log_out"
-        android:text="Cerrar sesión"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

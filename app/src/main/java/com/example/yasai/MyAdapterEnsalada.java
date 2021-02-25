@@ -98,7 +98,7 @@ public class MyAdapterEnsalada extends RecyclerView.Adapter<MyAdapterEnsalada.My
             image_brand=itemView.findViewById(R.id.imagen_);
             precio=itemView.findViewById(R.id.precio);
             agregar=itemView.findViewById(R.id.button3);
-            cantidad=itemView.findViewById(R.id.cantidad);
+            cantidad=itemView.findViewById(R.id.cantidad_);
         }
     }
 

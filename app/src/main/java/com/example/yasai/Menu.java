@@ -111,7 +111,9 @@ public class Menu extends AppCompatActivity {
         finish();
     }
 
-    public void agregarProductos(){
+
+
+    public  void agregarProductos(){
         ingresarCitricos();
         ingresarExoticas();
         ingresarOtraFruta();
@@ -122,6 +124,7 @@ public class Menu extends AppCompatActivity {
         ingresarSmoothie();
         ingresarHelado();
     }
+
 
     public void ingresarCitricos(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
