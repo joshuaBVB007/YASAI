@@ -1,9 +1,11 @@
 package com.example.yasai;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,19 +24,19 @@ import java.util.ArrayList;
 
 
 public class Menu extends AppCompatActivity {
-    static ArrayList<Datos> lista_De_La_Compra=new ArrayList<>();
+    public static ArrayList<Datos> lista_De_La_Compra=new ArrayList<>();
     //FRUTAS
-    static ArrayList<Datos> lista_citricas =new ArrayList<>();
-    static ArrayList<Datos> lista_exoticas =new ArrayList<>();
-    static ArrayList<Datos> lista_otrafruta =new ArrayList<>();
+    public static ArrayList<Datos> lista_citricas =new ArrayList<>();
+    public static ArrayList<Datos> lista_exoticas =new ArrayList<>();
+    public static ArrayList<Datos> lista_otrafruta =new ArrayList<>();
     //COMIDAS
-    static ArrayList<Datos> lista_ensalada =new ArrayList<>();
-    static ArrayList<Datos> lista_sopas =new ArrayList<>();
-    static ArrayList<Datos> lista_platos =new ArrayList<>();
+    public static ArrayList<Datos> lista_ensalada =new ArrayList<>();
+    public static ArrayList<Datos> lista_sopas =new ArrayList<>();
+    public static ArrayList<Datos> lista_platos =new ArrayList<>();
     //POSTRES
-    static ArrayList<Datos> lista_OtroPostre =new ArrayList<>();
-    static ArrayList<Datos> lista_Helado =new ArrayList<>();
-    static ArrayList<Datos> lista_Smoothie =new ArrayList<>();
+    public static ArrayList<Datos> lista_OtroPostre =new ArrayList<>();
+    public static ArrayList<Datos> lista_Helado =new ArrayList<>();
+    public static ArrayList<Datos> lista_Smoothie =new ArrayList<>();
 
     //CONTROLA QUE SI VOLVEMOS AL MENU VARIAS VECES NO CARGUEMOS LAS LISTAS DE COMIDAS VARIAS VECES
     public static int ingresa=1;
@@ -43,6 +45,8 @@ public class Menu extends AppCompatActivity {
     Button boton_bebidas;
     ImageView instagram;
     ImageView location;
+    ImageView recetas;
+    Button log_out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,8 @@ public class Menu extends AppCompatActivity {
         boton_bebidas=findViewById(R.id.button_bebidas);
         instagram=findViewById(R.id.instagram);
         location=findViewById(R.id.location);
+        recetas=findViewById(R.id.recetas);
+        log_out=findViewById(R.id.logout);
 
         if(ingresa==1){
                ingresa++;
@@ -58,12 +64,21 @@ public class Menu extends AppCompatActivity {
         }
 
 
+        recetas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Menu.this,"Recetas",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(Menu.this,Recetas.class);
+                startActivity(intent);
+            }
+        });
+
 
         //Boton que nos abre en la web la cuenta de la tienda
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Menu.this,"INSTAGRAM",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Menu.this,"Instagram",Toast.LENGTH_SHORT).show();
                 Uri url=Uri.parse("https://www.instagram.com/volcom/");
                 Intent insta=new Intent(Intent.ACTION_VIEW,url);
                 insta.setPackage("com.instagram.android");
@@ -86,6 +101,17 @@ public class Menu extends AppCompatActivity {
              }
         });
 
+        log_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Registro.firebaseM.getInstance().signOut();
+                Toast.makeText(Menu.this,"Hasta pronto",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(Menu.this,Registro.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 
@@ -103,12 +129,9 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
     }
 
-    public void log_out(View V){
-        Registro.firebaseM.getInstance().signOut();
-        Toast.makeText(Menu.this,"Hasta pronto",Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(Menu.this,Registro.class);
-        startActivity(intent);
-        finish();
+    public void saludar(View V){
+        ConstraintLayout con=findViewById(R.id.menucons);
+        con.setBackground(getDrawable(R.drawable.amarillo));
     }
 
 
