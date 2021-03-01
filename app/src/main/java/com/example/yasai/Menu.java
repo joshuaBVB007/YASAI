@@ -5,7 +5,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +22,7 @@ import java.util.ArrayList;
 
 
 public class Menu extends AppCompatActivity {
+    public static ArrayList<Receta> lista_propuestas_recetas=new ArrayList<>();
     public static ArrayList<Datos> lista_De_La_Compra=new ArrayList<>();
     //FRUTAS
     public static ArrayList<Datos> lista_citricas =new ArrayList<>();
@@ -68,7 +67,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Menu.this,"Recetas",Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(Menu.this,Recetas.class);
+                Intent intent=new Intent(Menu.this, AnadirRecetas.class);
                 startActivity(intent);
             }
         });
@@ -137,6 +136,7 @@ public class Menu extends AppCompatActivity {
 
 
     public  void agregarProductos(){
+        ingresarRecetas();
         ingresarCitricos();
         ingresarExoticas();
         ingresarOtraFruta();
@@ -146,6 +146,28 @@ public class Menu extends AppCompatActivity {
         ingresarOtroPostre();
         ingresarSmoothie();
         ingresarHelado();
+    }
+
+    public void ingresarRecetas(){
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("recetas_usuarios/");
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()){
+                        for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                            Receta mireceta=snapshot.getValue(Receta.class);
+                            lista_propuestas_recetas.add(mireceta);
+                            Log.i("hijos","1");
+                        }
+                    }
+                    Log.i("T", "onDataChange: ");
+                }
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    Log.w("TAG_2", "Failed to read value.", error.toException());
+                }
+            });
     }
 
 

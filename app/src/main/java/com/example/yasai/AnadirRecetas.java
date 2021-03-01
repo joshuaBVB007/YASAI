@@ -22,14 +22,16 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class Recetas extends AppCompatActivity {
+public class AnadirRecetas extends AppCompatActivity {
     Button cogerimg;
     Button subir;
+    Button verlista;
     ImageView imagen;
     EditText nombre_receta;
     Uri path;
     public StorageReference storageReference;
     public DatabaseReference databaseReference;
+    public static final int GALLERY_INTENT=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,32 +41,31 @@ public class Recetas extends AppCompatActivity {
         imagen=findViewById(R.id.imagen_receta);
         subir=findViewById(R.id.button5);
         nombre_receta=findViewById(R.id.nombre_receta);
+        verlista=findViewById(R.id.button6);
 
-        storageReference= FirebaseStorage.getInstance().getReference("/img_recetas");
+        storageReference= FirebaseStorage.getInstance().getReference();
         databaseReference= FirebaseDatabase.getInstance().getReference("recetas_usuarios");
 
         cogerimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Recetas.this,"cogiendo imagen",Toast.LENGTH_SHORT).show();
-                cogerimg();
+                Intent intent=new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent,GALLERY_INTENT);
             }
         });
 
-        subir.setOnClickListener(new View.OnClickListener() {
+        verlista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                subirImg();
+                Intent intent=new Intent(AnadirRecetas.this,ListarReceta.class);
+                startActivity(intent);
             }
         });
 
-    }
+    }//FIN ONCREATE
 
-    public void cogerimg(){
-        Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        intent.setType("image/");
-        startActivityForResult(intent.createChooser(intent,"selecciona una imagen"),10);
-    }
+
 
 
 
@@ -72,13 +73,26 @@ public class Recetas extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode==RESULT_OK){
+        if(requestCode==GALLERY_INTENT && resultCode==RESULT_OK){
             path=data.getData();
             imagen.setImageURI(path);
+            //hihi es la carpeta adonde va.
+            StorageReference filepath=storageReference.child("hihi").child(path.getLastPathSegment());
+            filepath.putFile(path).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(AnadirRecetas.this,"Operacion exitosa",Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     }
 
-    public void subirImg(){
+
+
+
+
+    /*public void subirImg(){
         if(path!=null){
             StorageReference reference=storageReference.child(""+path);
             reference.putFile(path).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -88,18 +102,18 @@ public class Recetas extends AppCompatActivity {
                                 ,taskSnapshot.getUploadSessionUri().toString());
                         String nombre_receta=databaseReference.push().getKey();
                         databaseReference.child(nombre_receta).setValue(mireceta);
-                        Toast.makeText(Recetas.this,"upload correct",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AnadirRecetas.this,"Operacion exitosa",Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(Recetas.this,"error al subir imagen",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AnadirRecetas.this,"error al subir imagen",Toast.LENGTH_SHORT).show();
                 }
             });
         }else{
-            Toast.makeText(Recetas.this,"no seleccionaste archivo",Toast.LENGTH_SHORT).show();
+            Toast.makeText(AnadirRecetas.this,"no seleccionaste imagen",Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
 
 

@@ -1,8 +1,11 @@
 package com.example.yasai;
 
 public class Receta {
-    private String nom;
-    private String url;
+    public String nom;
+    public String url;
+
+    public Receta(){
+    }
     public Receta(String nom, String url) {
         this.nom = nom;
         this.url=url;
