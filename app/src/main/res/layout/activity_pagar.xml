@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_700"
-    android:onClick="pagar"
     tools:context=".Pagar">
 
     <EditText
@@ -59,26 +58,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Cuenta_bancaria" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:onClick="pagar"
-        android:text="Pagar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_comprador" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="167dp"
-        android:layout_height="189dp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/compra"
+        android:layout_width="346dp"
+        android:layout_height="216dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/metododepago" />
+        app:layout_constraintTop_toBottomOf="@+id/id_comprador"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="buynow.json"
+        app:lottie_imageAssetsFolder="assets"
+        app:lottie_loop="true"></com.airbnb.lottie.LottieAnimationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

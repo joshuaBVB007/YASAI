@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,18 +43,20 @@ public class Menu extends AppCompatActivity {
 
 
     Button boton_bebidas;
-    ImageView instagram;
-    ImageView location;
+    LottieAnimationView location;
     ImageView recetas;
+    LottieAnimationView instagram;
     Button log_out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         boton_bebidas=findViewById(R.id.button_bebidas);
-        instagram=findViewById(R.id.instagram);
-        location=findViewById(R.id.location);
-        recetas=findViewById(R.id.recetas);
+        instagram=findViewById(R.id.hey3);
+
+
+        location=findViewById(R.id.hey4);
+       // recetas=findViewById(R.id.recetas);
         log_out=findViewById(R.id.logout);
 
         if(ingresa==1){
@@ -63,14 +66,14 @@ public class Menu extends AppCompatActivity {
         }
 
 
-        recetas.setOnClickListener(new View.OnClickListener() {
+       /* recetas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Menu.this,"Recetas",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Menu.this, AnadirRecetas.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
         //Boton que nos abre en la web la cuenta de la tienda
@@ -128,10 +131,6 @@ public class Menu extends AppCompatActivity {
             startActivity(intent);
     }
 
-    public void saludar(View V){
-        ConstraintLayout con=findViewById(R.id.menucons);
-        con.setBackground(getDrawable(R.drawable.amarillo));
-    }
 
 
 
@@ -150,7 +149,7 @@ public class Menu extends AppCompatActivity {
 
     public void ingresarRecetas(){
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("recetas_usuarios/");
+            DatabaseReference myRef = database.getReference("Recetas_usuarios");
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -161,7 +160,6 @@ public class Menu extends AppCompatActivity {
                             Log.i("hijos","1");
                         }
                     }
-                    Log.i("T", "onDataChange: ");
                 }
                 @Override
                 public void onCancelled(DatabaseError error) {
@@ -194,7 +192,7 @@ public class Menu extends AppCompatActivity {
 
     public void ingresarExoticas(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Exoticos");
+        DatabaseReference myRef = database.getReference("Exoticas");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -238,7 +236,7 @@ public class Menu extends AppCompatActivity {
 
     public void ingresarEnsalada(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Ensalada");
+        DatabaseReference myRef = database.getReference("Ensaladas");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -278,7 +276,7 @@ public class Menu extends AppCompatActivity {
 
     public void ingresarPlatos(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Plato");
+        DatabaseReference myRef = database.getReference("Platos");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

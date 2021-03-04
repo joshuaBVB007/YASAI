@@ -45,6 +45,10 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:6.4.0'
 
 
+    //lottie animacions
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+
     implementation 'com.google.firebase:firebase-auth:20.0.2'
     implementation 'com.google.firebase:firebase-database:19.6.0'
     implementation 'com.google.firebase:firebase-storage:19.2.1'

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class Pagar extends AppCompatActivity {
     String nombre;
     String direccion_;
@@ -17,6 +19,7 @@ public class Pagar extends AppCompatActivity {
     EditText direccion;
     EditText numero_cuenta;
     EditText dni;
+    LottieAnimationView paga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,19 @@ public class Pagar extends AppCompatActivity {
         direccion=findViewById(R.id.direccion);
         numero_cuenta=findViewById(R.id.Cuenta_bancaria);
         dni=findViewById(R.id.id_comprador);
+        paga=findViewById(R.id.compra);
+
+        paga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pagar();
+            }
+        });
 
 
     }
 
-    public void pagar(View V){
+    public void pagar(){
         nombre= nombre_comprador.getText().toString();
         direccion_= direccion.getText().toString();
         cuenta_bancaria=numero_cuenta.getText().toString();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rosita"
+    android:background="@color/verde"
     tools:context=".Registro">
 
     <EditText
@@ -73,5 +73,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_registrar" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/hey2"
+        android:layout_width="400dp"
+        android:layout_height="201dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="fruitbasket.json"
+        app:lottie_imageAssetsFolder="assets"
+        app:lottie_loop="true"></com.airbnb.lottie.LottieAnimationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
