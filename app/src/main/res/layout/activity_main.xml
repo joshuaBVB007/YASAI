@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="Yasai"
+        android:fontFamily="@font/cl2"
         android:textColor="@color/black"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,13 +43,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageYasai" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/hey2"
-        android:layout_width="262dp"
-        android:layout_height="156dp"
+        android:id="@+id/manguito"
+        android:layout_width="387dp"
+        android:layout_height="221dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NombreYasai"
+        app:layout_constraintVertical_bias="0.515"
         app:lottie_autoPlay="true"
         app:lottie_fileName="data.json"
         app:lottie_imageAssetsFolder="assets"

@@ -1,6 +1,5 @@
 package com.example.yasai;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -46,17 +45,18 @@ public class Menu extends AppCompatActivity {
     LottieAnimationView location;
     ImageView recetas;
     LottieAnimationView instagram;
+    LottieAnimationView crear_recetas;
     Button log_out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         boton_bebidas=findViewById(R.id.button_bebidas);
-        instagram=findViewById(R.id.hey3);
+        instagram=findViewById(R.id.insta);
 
 
-        location=findViewById(R.id.hey4);
-       // recetas=findViewById(R.id.recetas);
+        location=findViewById(R.id.maps);
+        crear_recetas=findViewById(R.id.n);
         log_out=findViewById(R.id.logout);
 
         if(ingresa==1){
@@ -66,14 +66,14 @@ public class Menu extends AppCompatActivity {
         }
 
 
-       /* recetas.setOnClickListener(new View.OnClickListener() {
+       crear_recetas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Menu.this,"Recetas",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Menu.this, AnadirRecetas.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
         //Boton que nos abre en la web la cuenta de la tienda
