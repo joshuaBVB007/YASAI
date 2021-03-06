@@ -20,10 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Animation anim= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim);
-        Imagen=findViewById(R.id.imageYasai);
         nombre_yasai=findViewById(R.id.NombreYasai);
 
-        Imagen.setAnimation(anim);
+
         nombre_yasai.setAnimation(anim);
 
 

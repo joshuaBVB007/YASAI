@@ -145,27 +145,31 @@ public class Menu extends AppCompatActivity {
         ingresarOtroPostre();
         ingresarSmoothie();
         ingresarHelado();
+
+
     }
 
     public void ingresarRecetas(){
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("Recetas_usuarios");
-            myRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
-                        for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                            Receta mireceta=snapshot.getValue(Receta.class);
-                            lista_propuestas_recetas.add(mireceta);
-                            Log.i("hijos","1");
-                        }
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Recetas_usuarios");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    //limpiamos la antigua
+                    Menu.lista_propuestas_recetas.clear();
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        Receta mireceta=snapshot.getValue(Receta.class);
+                        Menu.lista_propuestas_recetas.add(mireceta);
+                        Log.i("hijos","1");
                     }
                 }
-                @Override
-                public void onCancelled(DatabaseError error) {
-                    Log.w("TAG_2", "Failed to read value.", error.toException());
-                }
-            });
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.w("TAG_2", "Failed to read value.", error.toException());
+            }
+        });
     }
 
 
