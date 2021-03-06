@@ -13,7 +13,7 @@ public class Datos {
     //public int id;
     public static int id=0;
     int idsiguiente=id;
-
+    //he finalizado
     public Datos(){
         //Constructor por defecto
     }
