@@ -2,7 +2,7 @@ package com.example.yasai;
 
 public class Datos {
     /*DATO IMPORTANTE:los metodos setter y getter no deben tener el nombre de la propiedad
-    * sino dará error.como,no entendi? es decir si la propiedad de clase se llama origen el getter y setter
+    * sino dará error,como? no entendí.es decir si la propiedad de clase se llama origen el getter y setter
     * no debe tener como nombre getOrigen porque contiene la palabra "origen" y hay conflicto.
     * Este es un fallo que solo se da cuando trabajamos con firebase*/
     public String Nombre;
