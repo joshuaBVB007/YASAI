@@ -39,6 +39,7 @@ public class MyAdapterRecetasUsuario extends RecyclerView.Adapter<MyAdapterRecet
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Receta dato=lista.get(position);
         holder.nombre_receta.setText(dato.getNom());
+        holder.descripcion.setText(dato.getDescripcion());
         Picasso.with(con).load(dato.getUrl()).resize(100,100).into(holder.imagen_receta, new Callback() {
             @Override
             public void onSuccess() {
@@ -62,9 +63,11 @@ public class MyAdapterRecetasUsuario extends RecyclerView.Adapter<MyAdapterRecet
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView nombre_receta;
         ImageView imagen_receta;
+        TextView descripcion;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nombre_receta=itemView.findViewById(R.id.nombre_rece);
+            descripcion=itemView.findViewById(R.id.descripcion_receta);
             imagen_receta=itemView.findViewById(R.id.img);
         }
     }

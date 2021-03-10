@@ -145,8 +145,6 @@ public class Menu extends AppCompatActivity {
         ingresarOtroPostre();
         ingresarSmoothie();
         ingresarHelado();
-
-
     }
 
     public void ingresarRecetas(){
