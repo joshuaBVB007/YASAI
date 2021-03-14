@@ -34,14 +34,14 @@
 
             <TextView
                 android:id="@+id/nombre_rece"
-                android:layout_width="147dp"
-                android:layout_height="32dp"
+                android:layout_width="213dp"
+                android:layout_height="60dp"
                 android:fontFamily="@font/blanchope"
                 android:text="TextView"
                 android:textColor="@color/purple_500"
-                android:textSize="34sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.251"
+                app:layout_constraintHorizontal_bias="0.652"
                 app:layout_constraintStart_toEndOf="@+id/img"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,12 +62,12 @@
                 android:id="@+id/descripcion_receta"
                 android:layout_width="217dp"
                 android:layout_height="71dp"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="sans-serif-thin"
                 android:text="TextView"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/img"
                 app:layout_constraintTop_toBottomOf="@+id/nombre_rece" />
         </androidx.constraintlayout.widget.ConstraintLayout>

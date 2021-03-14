@@ -62,6 +62,8 @@ public class Pagar extends AppCompatActivity {
             dni.setError("Campo obligatorio");
         }else if(!nombre.isEmpty() && !direccion_.isEmpty() && !cuenta_bancaria.isEmpty() && !DNI.isEmpty()){
             Toast.makeText(getApplicationContext(),"Compra Exitosa",Toast.LENGTH_SHORT).show();
+            Menu.lista_De_La_Compra.clear();
+            ListaCompraFragment.adapter_lista_compra.notifyDataSetChanged();
         }
     }
 
